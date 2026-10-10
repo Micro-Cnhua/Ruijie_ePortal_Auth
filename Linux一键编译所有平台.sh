@@ -5,6 +5,11 @@ echo "=============================================="
 
 rm -f ruijie_*
 
+if [ ! -f go.mod ]; then
+    echo "Initializing Go module..."
+    go mod init ruijie
+fi
+
 echo "[1/6] Building Windows x86_64..."
 GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w" -o ruijie_windows_amd64.exe Ruijie_ePortal_Auth.go
 
@@ -25,6 +30,6 @@ GOOS=darwin GOARCH=arm64 CGO_ENABLED=0 go build -ldflags="-s -w" -o ruijie_macos
 
 echo ""
 echo "========================================"
-echo "  Build complete！"
+echo "  Build complete!"
 echo "========================================"
 ls -lh ruijie_*
