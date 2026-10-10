@@ -4,7 +4,9 @@ https://github.com/Turris-Babel/school_ruijie
 
 项目进行修改
 
-主要添加了service参数的选择和更新一下登录验证代码，更新了一版代码后现在service支持自动检测service提供的可选参数
+主要添加了service参数的选择和更新一下登录验证代码
+更新了一版代码后现在service支持自动检测service提供的可选参数
+
 再次感谢Turris-Babel的代码支持！
 
 # 广东东软学院锐捷校园网认证辅助脚本 (Ruijie Portal Auth)
