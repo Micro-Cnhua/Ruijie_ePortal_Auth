@@ -4,11 +4,12 @@ https://github.com/Turris-Babel/school_ruijie
 
 项目进行修改
 
-主要添加了service参数的选择，目前service参数用于区分学生和教师认证,再次感谢Turris-Babel的代码支持！
+主要添加了service参数的选择和更新一下登录验证代码，更新了一版代码后现在service支持自动检测service提供的可选参数
+再次感谢Turris-Babel的代码支持！
 
 # 广东东软学院锐捷校园网认证辅助脚本 (Ruijie Portal Auth)
 一个用于锐捷校园网 ePortal Web 认证的命令行客户端，支持多平台运行，无需浏览器即可完成认证。
-注意！不保证其他学校相同的锐捷web认证是否能用，但是只要是下面这种认证页面就能直接用！
+service现在已经可以自动检测，可以使用-l进行自动提取，理论上只要是下面这种认证页面就能直接用！
 ![图片](./屏幕截图%202026-09-09%20164324.png)
 
 广东东软学院直接编译或者下载程序就能用！无需对代码进行修改！
@@ -25,22 +26,27 @@ https://github.com/Turris-Babel/school_ruijie
 
 | 文件名 | 适用平台 | 架构 |
 |--------|----------|------|
-| ruijie_windows_amd64.exe | Windows | x86_64 |
-| ruijie_linux_amd64 | Linux | x86_64 |
-| ruijie_macos_amd64 | macOS | Intel |
-| ruijie_macos_arm64 | macOS | Apple Silicon |
-| ruijie_linux_armv8 | OpenWrt/树莓派 | ARMv8 (64位) |
-| ruijie_linux_armv7 | OpenWrt | ARMv7 (32位) |
+| rjpa_windows_amd64.exe | Windows | x86_64 |
+| rjpa_linux_amd64 | Linux | x86_64 |
+| rjpa_macos_amd64 | macOS | Intel |
+| rjpa_macos_arm64 | macOS | Apple Silicon |
+| rjpa_linux_armv8 | OpenWrt/树莓派 | ARMv8 (64位) |
+| rjpa_linux_armv7 | OpenWrt | ARMv7 (32位) |
 
 ## 🚀 快速开始
 ### 基本用法
 ```bash
+# 获取程序使用方法
+./rjpa_*
+
 # 学生身份登录（默认）
-./ruijie -u 学号 -p 密码 -m "认证页面URL"
+./rjpa_* -u 学号 -p 密码 -m "认证页面URL"
 
 # 教师身份登录
-./ruijie -u 工号 -p 密码 -s Teacher -m "认证页面URL"
+./rjpa_* -u 工号 -p 密码 -s Teacher -m "认证页面URL"
 
 # 持久化登录（每10秒检测一次）
-./ruijie -u 学号 -p 密码 -m "认证页面URL" -e
+./rjpa_* -u 学号 -p 密码 -m "认证页面URL" -e
 
+# 自动提取service可选择参数
+./rjpa_* -l
