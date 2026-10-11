@@ -9,7 +9,7 @@ https://github.com/Turris-Babel/school_ruijie
 
 再次感谢Turris-Babel的代码支持！
 
-# 已为Openwrt提供专用软件包，请到https://github.com/Micro-Cnhua/RJPA 查看
+### 已为Openwrt提供专用软件包，请到https://github.com/Micro-Cnhua/RJPA 查看
 
 # 广东东软学院锐捷校园网认证辅助脚本 (Ruijie ePortal Auth)
 一个用于锐捷校园网 ePortal Web 认证的命令行客户端，支持多平台运行，无需浏览器即可完成认证。
